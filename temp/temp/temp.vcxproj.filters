@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test1.cpp">
+    <ClCompile Include="hello_triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
@@ -28,7 +28,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="temp.vert" />
-    <None Include="temp.frag" />
+    <None Include="hello_triangle.vert" />
+    <None Include="hello_triangle.frag" />
   </ItemGroup>
 </Project>
