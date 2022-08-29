@@ -1,0 +1,4 @@
+﻿  test1.cpp
+C:\OpenGLTemplate\temp\temp\test1.cpp(16,7): warning C4101: 'infoLog': unreferenced local variable
+C:\OpenGLTemplate\temp\temp\test1.cpp(15,6): warning C4101: 'success': unreferenced local variable
+  temp.vcxproj -> C:\OpenGLTemplate\temp\x64\Debug\temp.exe
