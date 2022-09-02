@@ -1,0 +1,7 @@
+﻿  Hello_Triangle.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\opengl_template2\Hello_Triangle.cpp(29,7): warning C4101: 'infoLog': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\opengl_template2\Hello_Triangle.cpp(28,6): warning C4101: 'success': unreferenced local variable
+  Shader.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\opengl_template2\Shader.cpp(28,7): warning C4101: 'infoLog': unreferenced local variable
+  Generating Code...
+  opengl_template2.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\opengl_template2.exe

@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (CHAPTER2.vcxproj, temp.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Pyramid.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Pyramid\Pyramid.cpp(42,7): warning C4101: 'infoLog': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Pyramid\Pyramid.cpp(41,6): warning C4101: 'success': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Pyramid\Pyramid.cpp(54,7): warning C4101: 'infoLog': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Pyramid\Pyramid.cpp(53,6): warning C4101: 'success': unreferenced local variable
+  Pyramid.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\Pyramid.exe

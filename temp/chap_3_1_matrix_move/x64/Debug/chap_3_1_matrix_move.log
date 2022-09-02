@@ -1,0 +1,5 @@
+﻿  chap_3_1_matrix_move.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_3_1_matrix_move\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_3_1_matrix_move\chap_3_1_matrix_move.cpp(30,7): warning C4101: 'infoLog': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_3_1_matrix_move\chap_3_1_matrix_move.cpp(29,6): warning C4101: 'success': unreferenced local variable
+  chap_3_1_matrix_move.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\chap_3_1_matrix_move.exe

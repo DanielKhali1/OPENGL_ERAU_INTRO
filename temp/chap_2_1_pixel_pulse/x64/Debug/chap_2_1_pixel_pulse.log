@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (FragmentOnlyPrjo.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Shader.cpp
+  chap_2_1_pixel_pulse.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_2_1_pixel_pulse\chap_2_1_pixel_pulse.cpp(35,7): warning C4101: 'infoLog': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_2_1_pixel_pulse\chap_2_1_pixel_pulse.cpp(34,6): warning C4101: 'success': unreferenced local variable
+  Generating Code...
+  chap_2_1_pixel_pulse.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\chap_2_1_pixel_pulse.exe

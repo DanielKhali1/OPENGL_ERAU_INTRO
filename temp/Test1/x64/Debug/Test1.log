@@ -1,0 +1,3 @@
+﻿  Shader.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Test1\Shader.cpp(28,7): warning C4101: 'infoLog': unreferenced local variable
+  Test1.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\Test1.exe

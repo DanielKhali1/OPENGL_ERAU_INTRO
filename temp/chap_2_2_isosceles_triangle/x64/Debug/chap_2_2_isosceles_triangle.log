@@ -1,0 +1,4 @@
+﻿  Hello_Triangle.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_2_2_isosceles_triangle\Hello_Triangle.cpp(71,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_2_2_isosceles_triangle\Hello_Triangle.cpp(72,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  chap_2_2_isosceles_triangle.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\chap_2_2_isosceles_triangle.exe
