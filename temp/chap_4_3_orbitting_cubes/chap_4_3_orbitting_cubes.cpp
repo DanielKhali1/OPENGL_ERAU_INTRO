@@ -57,8 +57,8 @@ int main(void) {
 
 	int numVertices = (prec + 1) * (prec + 1);
 	int numIndices = prec * prec * 6;
-	for (int i = 0; i < numVertices; i++) { vertices.push_back(glm::vec3()); } // std::vector::push_back()
-	for (int i = 0; i < numIndices; i++) { indices.push_back(0); } // increases the vector size by 1
+	for (int i = 0; i < numVertices; i++) { vertices.push_back(glm::vec3()); } 
+	for (int i = 0; i < numIndices; i++) { indices.push_back(0); } 
 	// calculate triangle vertices
 	for (int i = 0; i <= prec; i++) {
 		for (int j = 0; j <= prec; j++) {
