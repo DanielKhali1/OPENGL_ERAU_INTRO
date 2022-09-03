@@ -49,52 +49,44 @@ int main(void) {
 	glfwSwapInterval(1);
 	init(window);
 
-	GLuint indices[] = {
-		// front
-		0, 1, 2,
-		2, 3, 0,
-		// right
-		1, 5, 6,
-		6, 2, 1,
-		// back
-		7, 6, 5,
-		5, 4, 7,
-		// left
-		4, 0, 3,
-		3, 7, 4,
-		// bottom
-		4, 5, 1,
-		1, 0, 4,
-		// top
-		3, 2, 6,
-		6, 7, 3
-	};
+	int prec = 48;
 
-	GLfloat vertices[] = {
-		// front
-		-1.0, -1.0,  1.0,
-		 1.0, -1.0,  1.0,
-		 1.0,  1.0,  1.0,
-		-1.0,  1.0,  1.0,
-		// back
-		-1.0, -1.0, -1.0,
-		 1.0, -1.0, -1.0,
-		 1.0,  1.0, -1.0,
-		-1.0,  1.0, -1.0
-	};
+	std::vector<glm::vec3> vertices;
+	std::vector<GLuint> indices;
+	std::vector<GLfloat> colorData;
 
-	GLfloat colorData[] = {
-		// front colors
-		1.0, 0.0, 0.0, 1.0,
-		0.0, 1.0, 0.0, 1.0,
-		0.0, 0.0, 1.0, 1.0,
-		1.0, 1.0, 1.0, 1.0,
-		// back colors
-		1.0, 0.0, 0.0, 1.0,
-		0.0, 1.0, 0.0, 1.0,
-		0.0, 0.0, 1.0, 1.0,
-		1.0, 1.0, 1.0, 1.0
-	};
+	int numVertices = (prec + 1) * (prec + 1);
+	int numIndices = prec * prec * 6;
+	for (int i = 0; i < numVertices; i++) { vertices.push_back(glm::vec3()); } // std::vector::push_back()
+	for (int i = 0; i < numIndices; i++) { indices.push_back(0); } // increases the vector size by 1
+	// calculate triangle vertices
+	for (int i = 0; i <= prec; i++) {
+		for (int j = 0; j <= prec; j++) {
+			float y = (GLfloat)cos(glm::radians(180.0f - i * 180.0f / prec));
+			float x = -(GLfloat)cos(glm::radians(j * 360.0f / prec)) * (GLfloat)abs(cos(asin(y)));
+			float z = (GLfloat)sin(glm::radians(j * 360.0f / prec)) * (GLfloat)abs(cos(asin(y)));
+			vertices[i * (prec + 1) + j] = glm::vec3(x, y, z);
+		}
+	}
+	// calculate triangle indices
+	for (int i = 0; i < prec; i++) {
+		for (int j = 0; j < prec; j++) {
+			indices[6 * (i * prec + j) + 0] = i * (prec + 1) + j;
+			indices[6 * (i * prec + j) + 1] = i * (prec + 1) + j + 1;
+			indices[6 * (i * prec + j) + 2] = (i + 1) * (prec + 1) + j;
+			indices[6 * (i * prec + j) + 3] = i * (prec + 1) + j + 1;
+			indices[6 * (i * prec + j) + 4] = (i + 1) * (prec + 1) + j + 1;
+			indices[6 * (i * prec + j) + 5] = (i + 1) * (prec + 1) + j;
+		}
+	}
+
+
+	for (int i = 0; i < numIndices; i++) {
+		colorData.push_back(0.0f);
+		colorData.push_back(static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
+		colorData.push_back(static_cast <float> (rand()) / static_cast <float> (RAND_MAX));
+		colorData.push_back(1.0f);
+	}
 
 	GLuint shaderProgram = createMainShaderProgram();
 	glEnable(GL_DEPTH_TEST);
@@ -102,9 +94,9 @@ int main(void) {
 	GLuint VBO[2];
 	glGenBuffers(2, VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(vertices[0]), &vertices[0], GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(colorData), colorData, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, colorData.size() * sizeof(GLfloat), &colorData[0], GL_STATIC_DRAW);
 
 	GLuint VAO;
 	glGenVertexArrays(1, &VAO);
@@ -127,7 +119,7 @@ int main(void) {
 	glm::mat4 model3 = MatrixHelper::buildScale(0.5f, 0.5f, 0.5f) * MatrixHelper::buildTranslate(0.0f, 0.0f, -4.3f);
 	glm::mat4 model4 = MatrixHelper::buildTranslate(-7.0f, 1.0f, 0.0f);
 
-	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -20.0f) * MatrixHelper::buildRotateX(-15.0f) * MatrixHelper::buildRotateY(20.0f);
+	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -15.0f) * MatrixHelper::buildRotateX(-15.0f) * MatrixHelper::buildRotateY(20.0f);
 	glm::mat4 perspective = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.01f, 100.0f);
 
 	while (!glfwWindowShouldClose(window)) {
@@ -141,23 +133,23 @@ int main(void) {
 		glUseProgram(shaderProgram);
 
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "mvp"), 1.0f, GL_FALSE, glm::value_ptr(mvp));
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, indices);
+		glDrawElements(GL_TRIANGLES, indices.size() * (sizeof(GLuint)), GL_UNSIGNED_INT, &indices[0]);
 
 		model2 *= MatrixHelper::buildTranslate(0.0f, 0.0f, 0.1f) * MatrixHelper::buildRotateY(1.0f);
 		mvp = perspective * view * model2;
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "mvp"), 1.0f, GL_FALSE, glm::value_ptr(mvp));
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, indices);
+		glDrawElements(GL_TRIANGLES, indices.size() * (sizeof(GLuint)), GL_UNSIGNED_INT, &indices[0]);
 
 		model3 *= MatrixHelper::buildTranslate(0.0f, -0.2f, 0.0) * MatrixHelper::buildRotateX(2.1f);
 		mvp = perspective * view * model2 * model3;
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "mvp"), 1.0f, GL_FALSE, glm::value_ptr(mvp));
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, indices);
+		glDrawElements(GL_TRIANGLES, indices.size() * (sizeof(GLuint)), GL_UNSIGNED_INT, &indices[0]);
 
 		model4 *= MatrixHelper::buildTranslate(0.0f, 0.0f, -0.1f) * MatrixHelper::buildRotateY(0.8f)  ;
 		mvp = perspective * view *  model4;
 		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "mvp"), 1.0f, GL_FALSE, glm::value_ptr(mvp));
-		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, indices);
-		
+		glDrawElements(GL_TRIANGLES, indices.size()*(sizeof(GLuint)), GL_UNSIGNED_INT, &indices[0]);
+		//glDrawArrays(GL_TRIANGLES, 0, numIndices);
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
