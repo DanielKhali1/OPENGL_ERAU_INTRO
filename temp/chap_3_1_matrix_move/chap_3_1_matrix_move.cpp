@@ -15,6 +15,20 @@
 #define WIDTH 600
 #define HEIGHT 600
 
+
+/* 
+
+we indicated that Euler angles can in
+some cases lead to undesirable artifacts. The most common is called “gimbal
+lock.” Describe gimbal lock, give an example, and explain why gimbal lock
+can cause problems
+
+	when 2 Euler axis align.. each axis of rotation must be rotated to realign the object to to target rotation. This can cause strange artifacts that 
+	are not expected when it comes to animating.
+
+*/
+
+
 using namespace std;
 
 void init(GLFWwindow* window) { }
@@ -25,9 +39,6 @@ void display(GLFWwindow* window, double currentTime) {
 }
 
 GLuint createMainShaderProgram() {
-
-	int success;
-	char infoLog[512];
 
 	const char* vertexShaderSource = "chap_3_1_matrix_move.vert";
 	const char* fragmentShaderSource = "chap_3_1_matrix_move.frag";
@@ -61,7 +72,13 @@ int main(void) {
 
 	float prevTime = 0.0f;
 
-	glm::mat4 rotationMatrix = MatrixHelper::buildRotateY(90.0f);
+	GLuint vao = NULL;
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+
+	glm::mat4 rotationMatrix = MatrixHelper::buildRotateZ(90.0f);
+
+	float deg = 0.0f;
 
 	while (!glfwWindowShouldClose(window)) {
 
@@ -71,18 +88,25 @@ int main(void) {
 
 		glUseProgram(shaderProgram);
 
-	/*	float deltaTime = glfwGetTime() - prevTime;
+		float deltaTime = glfwGetTime() - prevTime;
 		prevTime = glfwGetTime();
 
 		x += inc * glm::abs(deltaTime);
 		if (x > 1.0f) inc = -1.0f;
 		if (x < -1.0f) inc = 1.0f;
 
-		glProgramUniform4fv(shaderProgram, glGetUniformLocation(shaderProgram, "rotateMatrix"), 1, glm::value_ptr(rotationMatrix));
-		glProgramUniform1f(shaderProgram, glGetUniformLocation(shaderProgram, "offset"), x);
-		*/
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glm::mat4 translationMatrix = MatrixHelper::buildTranslate(x, 0.0, 0.0);
+		glm::mat4 rotation2Matrix = MatrixHelper::buildRotateY(deg);
 
+
+		deg += 3.0f;
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "rotateMatrix"), 1, GL_FALSE,  glm::value_ptr(rotationMatrix));
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "rotation2Matrix"), 1, GL_FALSE, glm::value_ptr(rotation2Matrix));
+		glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "translationMatrix"), 1, GL_FALSE, glm::value_ptr(translationMatrix));
+
+		
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+		//std::cout << glGetError() << std::endl;
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 		glGetError();

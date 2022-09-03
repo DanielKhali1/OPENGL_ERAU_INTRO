@@ -217,7 +217,7 @@ int main(void) {
 
 		glViewport(0, 0, WIDTH, HEIGHT);
 		display(window, glfwGetTime());
-		//model1 = glm::rotate(model1, glm::radians(0.5f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model1 = glm::rotate(model1, glm::radians(0.5f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 		//lightPos.x = 1*glm::cos(glm::radians(big_rot));
 		//lightPos.z = 1*glm::sin(glm::radians(big_rot));
