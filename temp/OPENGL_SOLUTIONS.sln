@@ -15,7 +15,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opengl_template2", "opengl_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chap_3_1_matrix_move", "chap_3_1_matrix_move\chap_3_1_matrix_move.vcxproj", "{5F518D69-FEE2-423C-9CA3-FAAABF904848}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chap_4_simple_cube", "chap_4_simple_cube\chap_4_simple_cube.vcxproj", "{EF54D949-E0C9-4A36-8EC9-A946EAC881B2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chap_4_cube_matrix_with_perspective", "chap_4_simple_cube\chap_4_simple_cube.vcxproj", "{EF54D949-E0C9-4A36-8EC9-A946EAC881B2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chap_4_simple_cube_2", "chap_4_simple_cube_2\chap_4_simple_cube_2.vcxproj", "{E5AE3DF1-95E4-4F57-8619-131901BE60BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chap_4_3_orbitting_cubes", "chap_4_3_orbitting_cubes\chap_4_3_orbitting_cubes.vcxproj", "{23A61216-ADA7-46CD-B129-6088F4C5A0AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,22 @@ Global
 		{EF54D949-E0C9-4A36-8EC9-A946EAC881B2}.Release|x64.Build.0 = Release|x64
 		{EF54D949-E0C9-4A36-8EC9-A946EAC881B2}.Release|x86.ActiveCfg = Release|Win32
 		{EF54D949-E0C9-4A36-8EC9-A946EAC881B2}.Release|x86.Build.0 = Release|Win32
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Debug|x64.ActiveCfg = Debug|x64
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Debug|x64.Build.0 = Debug|x64
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Debug|x86.Build.0 = Debug|Win32
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Release|x64.ActiveCfg = Release|x64
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Release|x64.Build.0 = Release|x64
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Release|x86.ActiveCfg = Release|Win32
+		{E5AE3DF1-95E4-4F57-8619-131901BE60BE}.Release|x86.Build.0 = Release|Win32
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Debug|x64.ActiveCfg = Debug|x64
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Debug|x64.Build.0 = Debug|x64
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Debug|x86.ActiveCfg = Debug|Win32
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Debug|x86.Build.0 = Debug|Win32
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Release|x64.ActiveCfg = Release|x64
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Release|x64.Build.0 = Release|x64
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Release|x86.ActiveCfg = Release|Win32
+		{23A61216-ADA7-46CD-B129-6088F4C5A0AB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

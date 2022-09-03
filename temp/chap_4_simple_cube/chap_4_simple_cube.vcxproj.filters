@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="chap_4_simple_cube.cpp">
+    <ClCompile Include="chap_4_cube_matrix_with_perspective.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Shader.cpp">
@@ -34,7 +34,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="chap_4_simple_cube.frag" />
-    <None Include="chap_4_simple_cube.vert" />
+    <None Include="chap_4_cube_matrix_with_perspective.frag" />
+    <None Include="chap_4_cube_matrix_with_perspective.vert" />
   </ItemGroup>
 </Project>
