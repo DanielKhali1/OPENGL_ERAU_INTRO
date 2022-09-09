@@ -1,10 +1,2 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (chap_4_simple_cube.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  chap_4_cube_matrix_with_perspective.cpp
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_4_simple_cube\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_4_simple_cube\chap_4_cube_matrix_with_perspective.cpp(29,7): warning C4101: 'infoLog': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_4_simple_cube\chap_4_cube_matrix_with_perspective.cpp(28,6): warning C4101: 'success': unreferenced local variable
-  MatrixHelper.cpp
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_4_simple_cube\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Shader.cpp
-  Generating Code...
   chap_4_simple_cube.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\chap_4_cube_matrix_with_perspective.exe

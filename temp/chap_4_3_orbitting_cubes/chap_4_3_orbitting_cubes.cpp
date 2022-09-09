@@ -9,10 +9,11 @@
 #include "MatrixHelper.h"
 #include <string>
 #include <vector>
+#include<SOIL2/SOIL2.h>
 
 
-#define WIDTH 1080
-#define HEIGHT 720
+#define WIDTH 470
+#define HEIGHT 470
 
 using namespace std;
 
@@ -33,6 +34,13 @@ GLuint createMainShaderProgram() {
 	Shader shaderObject(vertexShaderSource, fragmentShaderSource);
 
 	return shaderObject.shaderProgram;
+}
+
+GLuint loadTexture(const char* texImagePath) {
+	GLuint textureID = SOIL_load_OGL_texture(texImagePath,
+		SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+	if (textureID == 0) std::cout << "could not find texture file" << texImagePath << std::endl;
+	return textureID;
 }
 
 int main(void) {
@@ -88,6 +96,8 @@ int main(void) {
 		colorData.push_back(1.0f);
 	}
 
+	GLuint myTexture = loadTexture("image.jpg");
+
 	GLuint shaderProgram = createMainShaderProgram();
 	glEnable(GL_DEPTH_TEST);
 
@@ -119,8 +129,9 @@ int main(void) {
 	glm::mat4 model3 = MatrixHelper::buildScale(0.5f, 0.5f, 0.5f) * MatrixHelper::buildTranslate(0.0f, 0.0f, -4.3f);
 	glm::mat4 model4 = MatrixHelper::buildTranslate(-7.0f, 1.0f, 0.0f);
 
-	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -15.0f) * MatrixHelper::buildRotateX(-15.0f) * MatrixHelper::buildRotateY(20.0f);
-	glm::mat4 perspective = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.01f, 100.0f);
+	//glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -15.0f) * MatrixHelper::buildRotateX(-15.0f) * MatrixHelper::buildRotateY(20.0f);
+	glm::mat4 view  = glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::normalize(glm::vec3(0.0f, 2.0f, -3.0f) - glm::vec3(0.0f, 0.0f, 5.0f)), glm::vec3(0.0f, 3.0f, 0.0f));
+	glm::mat4 perspective = glm::perspective(glm::radians(90.0f), (float)WIDTH/(float)HEIGHT, 0.01f, 100.0f);
 
 	while (!glfwWindowShouldClose(window)) {
 
