@@ -11,16 +11,21 @@
 #include <vector>
 #include <SOIL2/SOIL2.h>
 #include "mesh.h"
+#include "Camera.h"
 
 
-#define WIDTH 600
-#define HEIGHT 600
+float WIDTH = 600;
+float HEIGHT = 600;
 
 using namespace std;
 
-bool mv[6];
+glm::vec3 lightPos = glm::vec3(1.0f, 1.0f, 4.0);
 
-glm::vec3 lightPos = glm::vec3(2.0f, 0.0f, 0.0);
+float deltaTime;
+
+Camera camera;
+
+bool lockcamerain = true;
 
 void init(GLFWwindow* window) { }
 
@@ -29,27 +34,54 @@ void display(GLFWwindow* window, double currentTime) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+void window_size_callback(GLFWwindow* window, int width, int height)
 {
-	if (key == GLFW_KEY_A) { if (action == GLFW_PRESS) { mv[0] = true; } else if (action == GLFW_RELEASE) { mv[0] = false; } }
-	if (key == GLFW_KEY_D) { if (action == GLFW_PRESS) { mv[1] = true; } else if (action == GLFW_RELEASE) { mv[1] = false; } }
-	if (key == GLFW_KEY_LEFT_CONTROL) { if (action == GLFW_PRESS) { mv[2] = true; } else if (action == GLFW_RELEASE) { mv[2] = false; } }
-	if (key == GLFW_KEY_SPACE) { if (action == GLFW_PRESS) { mv[3] = true; } else if (action == GLFW_RELEASE) { mv[3] = false; } }
-	if (key == GLFW_KEY_W) { if (action == GLFW_PRESS) { mv[4] = true; } else if (action == GLFW_RELEASE) { mv[4] = false; } }
-	if (key == GLFW_KEY_S) { if (action == GLFW_PRESS) { mv[5] = true; } else if (action == GLFW_RELEASE) { mv[5] = false; } }
-	std::cout << glGetError() << "\n";
-	//view = glm::translate(glm::mat4(1.0f), position);
+	WIDTH = static_cast<float> (width);
+	HEIGHT = static_cast<float> (height);
 }
 
-void move_events() {
-	float sped = 0.03f;
-	if (mv[0]) { lightPos.x -= sped; }
-	if (mv[1]) { lightPos.x += sped; }
-	if (mv[2]) { lightPos.y -= sped; }
-	if (mv[3]) { lightPos.y += sped; }
-	if (mv[5]) { lightPos.z += sped; }
-	if (mv[4]) { lightPos.z -= sped; }
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+	if (key == GLFW_KEY_ESCAPE) { if (action == GLFW_PRESS) { lockcamerain = !lockcamerain; } }
+	
+	
+	if (!lockcamerain) {
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+		glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
+	}
+	else {
+
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+		glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
+	}
+	camera.cameraKeyMovement(window, key, scancode, action, mods);
 }
+void mouse_callback(GLFWwindow* window, double xposz, double yposz) {
+
+	float xpos = static_cast<float>(xposz);
+	float ypos = static_cast<float>(yposz);
+	if (lockcamerain) {
+
+		if (camera.firstMouse)
+		{
+			camera.lastX = xpos;
+			camera.lastY = ypos;
+			camera.firstMouse = false;
+		}
+		float xoffset = xpos - camera.lastX;
+		float yoffset = camera.lastY - ypos; // reversed since y-coordinates go from bottom to top
+
+		camera.lastX = xpos;
+		camera.lastY = ypos;
+
+		camera.mouse_callback(xoffset, yoffset);
+
+		glfwSetCursorPos(window, WIDTH / 2.0f, HEIGHT / 2.0f);
+		camera.lastX = WIDTH / 2.0f;
+		camera.lastY = HEIGHT / 2.0f;
+	}
+};
 
 int main(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
@@ -60,22 +92,28 @@ int main(void) {
 	glfwSetWindowPos(window, 100, 100);
 	glfwMakeContextCurrent(window);
 
+	camera = Camera::Camera(window);
+	glfwSetCursorPos(window, WIDTH / 2.0, HEIGHT / 2.0);
+
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_CW);
+
 	glfwSetKeyCallback(window, key_callback);
+	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetWindowSizeCallback(window, window_size_callback);
+
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 
 	if (glewInit() != GLEW_OK) { exit(EXIT_FAILURE); }
 	glfwSwapInterval(1);
 	init(window);
 
-	GLuint globalAmbLoc, ambLoc, diffLoc, specLoc, posLoc, mAmbLoc, mDiffLoc, mSpecLoc, mShiLoc;
 
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_CW);
-	
-
-	mesh planet1 = mesh::mesh("shader.vert", "shader.frag");
-	planet1.loadOBJ("plane.obj");
-	planet1.loadTexture("HaloAction_u1_v1.jpeg", GL_TEXTURE1);
+	mesh brick_plane = mesh::mesh("shader.vert", "shader.frag");
+	brick_plane.loadOBJ("plane.obj");
+	brick_plane.loadTexture("brick.jpg", GL_TEXTURE1);
 
 	mesh helmet = mesh::mesh("shader.vert", "shader.frag");
 	helmet.loadOBJ("Grrek_Helmet_01.obj");
@@ -84,41 +122,62 @@ int main(void) {
 	mesh light = mesh::mesh("light.vert", "light.frag");
 	light.makeSphere(48);
 
-	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -5.3f) * MatrixHelper::buildRotateX(-10.0f);
-	glm::mat4 perspective = glm::perspective(glm::radians(60.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 10.0f);
+	camera.updateCameraVectors();
+	//glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -5.3f) * MatrixHelper::buildRotateX(-10.0f);
+	glm::mat4 perspective = glm::perspective((float)glm::radians((float)HEIGHT*0.1), (float)WIDTH/(float)HEIGHT, 0.1f, 50.0f);
+	glm::mat4 view = camera.getViewMatrix(); 
 
-	planet1.setUniform1i(2, "decide");
+	brick_plane.setUniform1i(2, "decide");
 	helmet.setUniform1i(1, "decide");
 
-	std::cout << planet1.numTriangles*3 << std::endl;
+	std::cout << brick_plane.numTriangles*3 << std::endl;
 
-	planet1.model = MatrixHelper::buildTranslate(0.0f, 0.0f, 3.0f);
-	helmet.model = MatrixHelper::buildTranslate(0.0f, 1.0f, 0.0f);
+	brick_plane.model = MatrixHelper::buildTranslate(0.0f, -2.0f, 0.0f) * MatrixHelper::buildScale(4.0f, 4.0f, 4.0f);
+	//helmet.model = MatrixHelper::buildTranslate(0.0f, 1.0f, 0.0f);
 
-	light.model = MatrixHelper::buildTranslate(lightPos.x, lightPos.y, lightPos.z) * MatrixHelper::buildScale(.2f, .2f, .2f)  ;
 	glm::mat4 theta = glm::mat4(1.0f);
 	bool left = false;
 
+	helmet.loadMaterialConstants(250.0f,
+		glm::vec3(1.0f, 1.0f, 1.0f),
+		glm::vec3(0.8f, 0.017155f, 0.043768f),
+		glm::vec3(0.5f, 0.5f, 0.5f));
 
+	float lastFrame = static_cast<float>(glfwGetTime());
 	while (!glfwWindowShouldClose(window)) {
+
+		float currentFrame = static_cast<float>(glfwGetTime());
+		deltaTime = currentFrame - lastFrame;
+		lastFrame = currentFrame;
 
 		glViewport(0, 0, WIDTH, HEIGHT);
 		display(window, glfwGetTime());
-		move_events();
 
-		planet1.setUniform1i(2, "decide");
-		glm::mat4 mvp = perspective * view * planet1.model ;
-		glUniform3f(glGetUniformLocation(planet1.shaderProgram, "lightColor"), 1.0f, 1.0f, 1.0f);
-		glUniform3fv(glGetUniformLocation(planet1.shaderProgram, "lightPos"), 1, &lightPos[0]);
-		planet1.setUniformMatrix4fv(&planet1.model, "model");
-		planet1.setUniformMatrix4fv(&mvp, "mvp");
-		planet1.DrawArray();
+		camera.move_events(deltaTime);
+		camera.updateCameraVectors();
+		view = camera.getViewMatrix();
+		perspective = glm::perspective((float)glm::radians((float)HEIGHT * 0.1), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
+
+		brick_plane.setUniform1i(2, "decide");
+		glm::mat4 mvp = perspective * view * brick_plane.model ;
+		glUniform3f(glGetUniformLocation(brick_plane.shaderProgram, "lightColor"), 1.0f, 1.0f, 1.0f);
+		glUniform3fv(glGetUniformLocation(brick_plane.shaderProgram, "lightPos"), 1, &lightPos[0]);
+		glUniform3fv(glGetUniformLocation(brick_plane.shaderProgram, "view"), 1, &camera.cameraPos[0]);
+		brick_plane.setUniformMatrix4fv(&brick_plane.model, "model");
+		brick_plane.setUniformMatrix4fv(&mvp, "mvp");
+		brick_plane.DrawArray();
 
 
 		helmet.setUniform1i(1, "decide");
+		helmet.loadMaterialConstants(250.0f,
+			glm::vec3(1.0f, 1.0f, 1.0f),
+			glm::vec3(0.8f, 0.017155f, 0.043768f),
+			glm::vec3(0.5f, 0.5f, 0.5f));
+		helmet.model *= MatrixHelper::buildRotateY(1.0f);
 		mvp = perspective * view * helmet.model;
 		glUniform3f(glGetUniformLocation(helmet.shaderProgram, "lightColor"), 1.0f, 1.0f, 1.0f);
 		glUniform3fv(glGetUniformLocation(helmet.shaderProgram, "lightPos"), 1, &lightPos[0]);
+		glUniform3fv(glGetUniformLocation(helmet.shaderProgram, "view"), 1, &camera.cameraPos[0]);
 		helmet.setUniformMatrix4fv(&helmet.model, "model");
 		helmet.setUniformMatrix4fv(&mvp, "mvp");
 		helmet.DrawArray();
@@ -133,7 +192,7 @@ int main(void) {
 		glGetError(); 
 	}
 
-	planet1.cleanup();
+	brick_plane.cleanup();
 	helmet.cleanup();
 
 	glfwDestroyWindow(window);

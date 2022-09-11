@@ -1,12 +1,11 @@
-﻿  chap_7_phong_lighting_1_Objects_1.cpp
+﻿  Camera.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\Camera.cpp(25,9): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\Camera.cpp(26,11): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  chap_7_phong_lighting_1_Objects_1.cpp
 C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,86): warning C4101: 'mShiLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,40): warning C4101: 'specLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,57): warning C4101: 'mAmbLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,76): warning C4101: 'mSpecLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,49): warning C4101: 'posLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,31): warning C4101: 'diffLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,66): warning C4101: 'mDiffLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,9): warning C4101: 'globalAmbLoc': unreferenced local variable
-C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(70,23): warning C4101: 'ambLoc': unreferenced local variable
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(91,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(91,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(153,27): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_phong_lighting_1_Objects1\chap_7_phong_lighting_1_Objects_1.cpp(153,20): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+  Generating Code...
   chap_7_phong_lighting_1_Objects1.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\chap_7_phong_lighting_1_Objects1.exe
