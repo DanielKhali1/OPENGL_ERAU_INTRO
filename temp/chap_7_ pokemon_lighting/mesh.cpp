@@ -10,7 +10,8 @@
 
 mesh::mesh(const char* vertexShaderPath, const char* fragmentShaderPath) {
 	Shader shaderObject(vertexShaderPath, fragmentShaderPath);
-	this->shaderProgram = shaderObject.shaderProgram;
+	this->currentShaderProg = shaderObject.shaderProgram;
+	shaderPrograms.push_back(this->currentShaderProg);
 
 	this->vaoID;
 	glGenVertexArrays(1, &this->vaoID);
@@ -19,11 +20,20 @@ mesh::mesh(const char* vertexShaderPath, const char* fragmentShaderPath) {
 	model = glm::mat4(1.0f);
 }
 
+void mesh::addShader(const char* vertexShaderPath, const char* fragmentShaderPath) {
+	Shader shaderObject(vertexShaderPath, fragmentShaderPath);
+	this->shaderPrograms.push_back(shaderObject.shaderProgram);
+}
+
+void mesh::swapShader(int index) {
+	this->currentShaderProg = this->shaderPrograms[index];
+}
+
 void mesh::loadMaterialConstants(float ns, glm::vec3 ka, glm::vec3 kd, glm::vec3 ks)
 {
-	glUniform3fv(glGetUniformLocation(shaderProgram, "Ka"), 1, &ka[0]);
-	glUniform3fv(glGetUniformLocation(shaderProgram, "Kd"), 1, &kd[0]);
-	glUniform3fv(glGetUniformLocation(shaderProgram, "Ks"), 1, &ks[0]);
+	glUniform3fv(glGetUniformLocation(currentShaderProg, "Ka"), 1, &ka[0]);
+	glUniform3fv(glGetUniformLocation(currentShaderProg, "Kd"), 1, &kd[0]);
+	glUniform3fv(glGetUniformLocation(currentShaderProg, "Ks"), 1, &ks[0]);
 }
 
 void mesh::makeSphere(int prec) {
@@ -88,7 +98,7 @@ GLuint loadTexture1(const char* texImagePath) {
 }
 
 void mesh::loadTexture(const char* texturePath, GLuint TextLoc) {
-	glUseProgram(this->shaderProgram);
+	glUseProgram(this->currentShaderProg);
 
 	glActiveTexture(TextLoc);
 	GLuint bricktext = loadTexture1(texturePath);
@@ -180,7 +190,7 @@ void mesh::loadVertexPositions(std::vector<GLfloat>* vertices, const char * vert
 
 	glBindVertexArray(this->vaoID);
 
-	GLuint posLoc = glGetAttribLocation(this->shaderProgram, vertexAttributeName);
+	GLuint posLoc = glGetAttribLocation(this->currentShaderProg, vertexAttributeName);
 	glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	glEnableVertexAttribArray(posLoc);
 }
@@ -195,7 +205,7 @@ void mesh::loadTextCoords(std::vector<GLfloat>* vertices, const char* vertexAttr
 	glBindVertexArray(this->vaoID);
 
 
-	GLuint textcoordLoc = glGetAttribLocation(this->shaderProgram, vertexAttributeName);
+	GLuint textcoordLoc = glGetAttribLocation(this->currentShaderProg, vertexAttributeName);
 	glVertexAttribPointer(textcoordLoc, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	glEnableVertexAttribArray(textcoordLoc);
 }
@@ -210,7 +220,7 @@ void mesh::loadSurfaceNormals(std::vector<GLfloat>* vertices, const char* vertex
 	glBindVertexArray(this->vaoID);
 
 
-	GLuint normalLoc = glGetAttribLocation(this->shaderProgram, vertexAttributeName);
+	GLuint normalLoc = glGetAttribLocation(this->currentShaderProg, vertexAttributeName);
 	glVertexAttribPointer(normalLoc, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	glEnableVertexAttribArray(normalLoc);
 }
@@ -225,44 +235,44 @@ void mesh::loadVertexColors(std::vector<GLfloat>* vertices, const char* vertexAt
 	glBindVertexArray(this->vaoID);
 
 
-	GLuint colorLoc = glGetAttribLocation(this->shaderProgram, vertexAttributeName);
+	GLuint colorLoc = glGetAttribLocation(this->currentShaderProg, vertexAttributeName);
 	glVertexAttribPointer(colorLoc, 4, GL_FLOAT, GL_FALSE, 0, (void*)0);
 	glEnableVertexAttribArray(colorLoc);
 }
 
 void mesh::setUniformMatrix4fv(glm::mat4 * matrix, const char * shaderAttribName) {
-	glUseProgram(this->shaderProgram);
-	glUniformMatrix4fv(glGetUniformLocation(this->shaderProgram, shaderAttribName), 1, GL_FALSE, glm::value_ptr(*matrix));
+	glUseProgram(this->currentShaderProg);
+	glUniformMatrix4fv(glGetUniformLocation(this->currentShaderProg, shaderAttribName), 1, GL_FALSE, glm::value_ptr(*matrix));
 }
 
 void mesh::setUniform1i(int i, const char* shaderAttribName) {
-	glUseProgram(this->shaderProgram);
-	glUniform1i(glGetUniformLocation(this->shaderProgram, shaderAttribName), i);
+	glUseProgram(this->currentShaderProg);
+	glUniform1i(glGetUniformLocation(this->currentShaderProg, shaderAttribName), i);
 }
 
 void mesh::DrawArray(int size) {
-	glUseProgram(this->shaderProgram);
+	glUseProgram(this->currentShaderProg);
 	glBindVertexArray(this->vaoID);
 
 	glDrawArrays(GL_TRIANGLES, 0, size);
 }
 
 void mesh::DrawArray() {
-	glUseProgram(this->shaderProgram);
+	glUseProgram(this->currentShaderProg);
 	glBindVertexArray(this->vaoID);
 
 	glDrawArrays(GL_TRIANGLES, 0, numTriangles*3);
 }
 
 void mesh::DrawElements(std::vector<GLuint>* index_data) {
-	glUseProgram(this->shaderProgram);
+	glUseProgram(this->currentShaderProg);
 	glBindVertexArray(this->vaoID);
 
 	glDrawElements(GL_TRIANGLES, index_data->size() * sizeof(GLuint), GL_UNSIGNED_INT, &(*index_data)[0]);
 }
 
 void mesh::DrawElements() {
-	glUseProgram(this->shaderProgram);
+	glUseProgram(this->currentShaderProg);
 	glBindVertexArray(this->vaoID);
 
 	glDrawElements(GL_TRIANGLES, indicies.size() * sizeof(GLuint), GL_UNSIGNED_INT, &(indicies)[0]);
@@ -274,6 +284,6 @@ void mesh::setIndicies(std::vector<GLuint>* indicies) {
 
 void mesh::cleanup() {
 
-	glDeleteProgram(this->shaderProgram);
+	glDeleteProgram(this->currentShaderProg);
 
 }

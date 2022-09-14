@@ -11,7 +11,8 @@ class mesh
 
 public:
 	GLuint vaoID;
-	GLuint shaderProgram;
+	std::vector<GLuint> shaderPrograms;
+	GLuint currentShaderProg;
 	std::vector<GLuint> vboIDs;
 
 	std::vector<GLuint> indicies;
@@ -32,6 +33,10 @@ public:
 
 
 	mesh(const char* vertexShaderPath, const char* fragmentShaderPath);
+
+	void addShader(const char* vertexShaderPath, const char* fragmentShaderPath);
+
+	void swapShader(int index);
 
 	void makeSphere(int prec);
 	void loadTexture(const char * texturePath, GLuint TextLoc);

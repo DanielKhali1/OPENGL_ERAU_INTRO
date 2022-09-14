@@ -36,5 +36,7 @@ public:
 	glm::mat4 getViewMatrix();
 	void move_events(float deltaTime);
 	void cameraKeyMovement(GLFWwindow* window, int key, int scancode, int action, int mods);
+	glm::mat4 getViewMatrixLookingAtOrigin();
+
 };
 

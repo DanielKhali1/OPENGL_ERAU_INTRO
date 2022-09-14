@@ -51,6 +51,10 @@ glm::mat4 Camera::getViewMatrix() {
 	return glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 }
 
+glm::mat4 Camera::getViewMatrixLookingAtOrigin() {
+	return glm::lookAt(cameraPos, (glm::vec3(0.0, 0.0, 0.0) - cameraPos), cameraUp);
+}
+
 void Camera::cameraKeyMovement(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_A) { if (action == GLFW_PRESS) { std::cout << "left" << std::endl; mv[0] = true; } else if (action == GLFW_RELEASE) { mv[0] = false; } }
