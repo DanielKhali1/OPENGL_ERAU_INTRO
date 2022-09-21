@@ -13,8 +13,8 @@
 #include "mesh.h"
 #include "Camera.h"
 
-float WIDTH = 1000;
-float HEIGHT = 700;
+float WIDTH = 600;
+float HEIGHT = 600;
 
 using namespace std;
 
@@ -174,15 +174,15 @@ void passOne(mesh * charm, mesh * squirt, mesh * bulb, mesh * plane, mesh * ligh
 	}
 
 void setupShadowBuffer(GLFWwindow* window) {
-	int screenX = 1024;
-	int screenY = 1024;
+	int screenX = 2048;
+	int screenY = 2048;
 		
 
 	glGenFramebuffers(1, &shadowBuffer);
 
 	glGenTextures(1, &shadowTex);
 	glBindTexture(GL_TEXTURE_2D, shadowTex);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, screenX*2, screenY * 2, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, screenX, screenY , 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
@@ -203,7 +203,7 @@ int main(void) {
 	if (!glfwInit()) { exit(EXIT_FAILURE); }
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-
+	 
 	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "3D model loading", NULL, NULL);
 	glfwSetWindowPos(window, 100, 100);
 	glfwMakeContextCurrent(window);
@@ -283,7 +283,7 @@ int main(void) {
 		lightPos.z = 5 * glm::cos(glm::radians(theta));
 		theta += 0.1f;
 
-		glViewport(0, 0, WIDTH * 2, HEIGHT * 2);
+		glViewport(0, 0, 2048, 2048);
 		glBindFramebuffer(GL_FRAMEBUFFER, shadowBuffer);
 		glClear(GL_DEPTH_BUFFER_BIT);
 		glActiveTexture(GL_TEXTURE5);
