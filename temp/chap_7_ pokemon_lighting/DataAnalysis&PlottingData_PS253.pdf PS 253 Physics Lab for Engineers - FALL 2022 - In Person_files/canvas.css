@@ -1,0 +1,230 @@
+@import 'https://erau.evaluationkit.com/canvas/css';
+
+.erau-accordion.ui-accordion .ui-accordion-header {
+    /*margin-bottom: 0;*/
+}
+.erau-accordion.ui-accordion .ui-accordion-content {
+    /*padding: 22px 24px 12px;*/
+}
+
+/* Remove the "Delete This Course" button */
+#right-side a[href$="/confirm_action?event=delete"] {
+    display: none !important;
+}
+/* Remove buttons: Conclude Course, Reset Course Content */
+#right-side a[href$="/confirm_action?event=conclude"], #right-side .reset_course_content_button {
+    display: none !important;
+}
+
+/* Enhance Audio Embed subtitle overlays */
+.mejs-container.mejs-audio {
+    margin-top: 97px;
+}
+.mejs-captions-position-hover {
+    bottom: 30px;
+    background: #1D1D1D;
+    padding: 13px 10px;
+    border-radius: 4px 4px 0 0;
+    box-sizing: border-box;
+}
+.mejs-captions-text {
+    background: transparent;
+    padding: 0;
+}
+
+/* Customize test environment */
+body.erau-test .ic-app-header__logomark-container, body.erau-beta .ic-app-header__logomark-container {
+    background: #8F0033;
+}
+
+img.text-center {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: auto;
+}
+.pull-left {
+    margin: 0 20px 15px 0;
+}
+.pull-right {
+    margin: 0 0 15px 20px;
+}
+/* Wider settings input fields */
+#course_form input#course_name {
+    min-width: 90%!important;
+}
+#course_form input#course_course_code,
+#course_form input#course_time_zone,
+#course_form input#course_sis_source_id {
+    min-width: 41%!important;
+}
+
+/* Nested threads - likely to be moved to canvas.css 09/2016 */
+.replies {
+    padding-left: 0px;
+    border-left: solid #EAEAEA 20px;
+} 
+.discussion-read-state-btn {
+    top: 30px;
+    left: -27px;
+}
+.deleted-discussion-entry > .discussion-read-state-btn {
+    top: 3px;
+}
+div.entry-content {
+    padding-left:0px !important;
+}
+
+/*!
+ * jQuery UI CSS Framework 1.8.21
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */.erau-accordion.ui-helper-hidden,.erau-ui-tabs.ui-helper-hidden{display:none}.erau-accordion.ui-helper-hidden-accessible,.erau-accordion.ui-button-icon-only .ui-button-text,.erau-accordion.ui-button-icons-only .ui-button-text,.erau-ui-tabs.ui-helper-hidden-accessible,.erau-ui-tabs.ui-button-icon-only .ui-button-text,.erau-ui-tabs.ui-button-icons-only .ui-button-text{position:absolute !important;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px)}.erau-accordion.ui-helper-reset,.erau-ui-tabs.ui-helper-reset{margin:0;padding:0;border:0;outline:0;line-height:1.3;text-decoration:none;font-size:100%;list-style:none}.erau-accordion.ui-helper-clearfix:before,.erau-accordion.ui-helper-clearfix:after,.erau-ui-tabs.ui-helper-clearfix:before,.erau-ui-tabs.ui-helper-clearfix:after{content:"";display:table}.erau-accordion.ui-helper-clearfix:after,.erau-ui-tabs.ui-helper-clearfix:after{clear:both}.erau-accordion.ui-helper-clearfix,.erau-ui-tabs.ui-helper-clearfix{zoom:1}.erau-accordion.ui-helper-zfix,.erau-ui-tabs.ui-helper-zfix{width:100%;height:100%;top:0;left:0;position:absolute;opacity:0;filter:Alpha(Opacity=0)}.erau-accordion.ui-state-disabled,.erau-ui-tabs.ui-state-disabled{cursor:default !important}.erau-accordion.ui-icon,.erau-ui-tabs.ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat}.erau-accordion.ui-widget-overlay,.erau-ui-tabs.ui-widget-overlay{position:absolute;top:0;left:0;width:100%;height:100%}/*!
+ * jQuery UI Accordion 1.8.21
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Accordion#theming
+ */.erau-accordion.ui-accordion{width:100%}
+.erau-accordion.ui-accordion .ui-accordion-header{cursor:pointer;position:relative;margin-top:1px;zoom:1}
+.erau-accordion.ui-accordion .ui-accordion-li-fix{display:inline}.erau-accordion.ui-accordion .ui-accordion-header-active{border-bottom:0 !important}
+.erau-accordion.ui-accordion .ui-accordion-header a{display:block;font-size:1em;padding:.5em .5em .5em .7em;font-weight:bold}
+.erau-accordion.ui-accordion-icons .ui-accordion-header a{padding-left:2.2em}
+.erau-accordion.ui-accordion .ui-accordion-header .ui-icon{position:absolute;left:.5em;top:50%;margin-top:-8px}
+.erau-accordion.ui-accordion .ui-accordion-content{padding:1em 2.2em;border-top:0;margin-top:-2px;position:relative;top:1px;margin-bottom:2px;overflow:auto;display:none;zoom:1}
+.erau-accordion.ui-accordion .ui-accordion-content-active{display:block}.erau-accordion.ui-accordion .ui-accordion-header,.erau-accordion.ui-accordion .ui-accordion-content{border-radius:0}/*!
+ * jQuery UI Tabs 1.8.21
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */.erau-ui-tabs.ui-tabs{position:relative;zoom:1;border-radius:0;border:none !important;background-color:transparent !important}.erau-ui-tabs.ui-tabs .ui-tabs-nav{margin:0;padding:0;border-radius:0;background:transparent;border-width:0 0 1px 0;box-shadow:none}.erau-ui-tabs.ui-tabs .ui-tabs-nav li{list-style:none;float:left;position:relative;top:1px;margin:0 .2em 1px 0;border-bottom:0 !important;padding:0;white-space:nowrap}.erau-ui-tabs.ui-tabs .ui-tabs-nav li a{float:left;padding:.5em .9em;text-decoration:none;font-weight:bold;text-shadow:0 1px 0 rgba(255,255,255,0.5)}.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-active{margin-bottom:0;padding-bottom:1px;background:#fff;border-color:#aaa;box-shadow:none}.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-active a{color:#333}.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-active a,.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-disabled a,.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-processing a{cursor:text}.erau-ui-tabs.ui-tabs .ui-tabs-nav li a,.erau-ui-tabs.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a{cursor:pointer}.erau-ui-tabs.ui-tabs .ui-tabs-panel{display:block;padding:1em 1.4em;background-color:#fff;border-width:0 1px 1px 1px;border-radius:0}.erau-ui-tabs.ui-tabs .ui-tabs-hide{display:none !important}/*!
+ * jQuery UI CSS Framework 1.8.21
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/
+ */.erau-accordion.ui-widget,.erau-ui-tabs.ui-widget{font-size:12px;font-size:.75rem}.erau-accordion.ui-widget .ui-widget,.erau-ui-tabs.ui-widget .ui-widget{font-size:1em}.erau-accordion.ui-widget-content,.erau-ui-tabs.ui-widget-content{border:1px solid #aaa;background:#fff;color:#2D3B45}.erau-accordion.ui-widget-header,.erau-ui-tabs.ui-widget-header{border:1px solid #C7CDD1;background:#f5f5f5}.erau-accordion.ui-widget-header a,.erau-ui-tabs.ui-widget-header a{color:#333}.erau-accordion.ui-state-default,.erau-accordion.ui-widget-header .ui-state-default,.erau-ui-tabs.ui-state-default,.erau-ui-tabs.ui-widget-header .ui-state-default{border:1px solid #ccc;color:#333;font-weight:normal;background-image:linear-gradient(to bottom, #fff, #e6e6e6);border-bottom-color:#bbb}.erau-accordion.ui-state-highlight,.erau-accordion.ui-widget-content .ui-state-highlight,.erau-accordion.ui-widget-header .ui-state-highlight,.erau-ui-tabs.ui-state-highlight,.erau-ui-tabs.ui-widget-content .ui-state-highlight,.erau-ui-tabs.ui-widget-header .ui-state-highlight{border:1px solid #eedc94;background:#eedc94;color:#404040;background-image:linear-gradient(to bottom, #fceec1, #eedc94);text-shadow:0 1px 0 rgba(255,255,255,0.5);border-color:#eedc94 #eedc94 #e4c652;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);box-shadow:inset 0 1px 0 rgba(255,255,255,0.25)}.erau-accordion.ui-state-highlight a,.erau-accordion.ui-widget-content .ui-state-highlight a,.erau-accordion.ui-widget-header .ui-state-highlight a,.erau-ui-tabs.ui-state-highlight a,.erau-ui-tabs.ui-widget-content .ui-state-highlight a,.erau-ui-tabs.ui-widget-header .ui-state-highlight a{color:#404040}.erau-accordion.ui-state-default a,.erau-accordion.ui-state-default a:link,.erau-accordion.ui-state-default a:visited,.erau-ui-tabs.ui-state-default a,.erau-ui-tabs.ui-state-default a:link,.erau-ui-tabs.ui-state-default a:visited{color:#333;text-decoration:none}
+.erau-accordion.ui-state-hover,.erau-accordion.ui-widget-content .ui-state-hover,.erau-accordion.ui-widget-header .ui-state-hover,.erau-accordion.ui-state-focus,.erau-accordion.ui-widget-content .ui-state-focus,.erau-accordion.ui-widget-header .ui-state-focus,
+.erau-ui-tabs.ui-state-hover,.erau-ui-tabs.ui-widget-content .ui-state-hover,.erau-ui-tabs.ui-widget-header .ui-state-hover,.erau-ui-tabs.ui-state-focus,.erau-ui-tabs.ui-widget-content .ui-state-focus,.erau-ui-tabs.ui-widget-header .ui-state-focus{border:1px solid #9D9D9D;font-weight:normal}
+.erau-accordion.ui-state-hover a,.erau-accordion.ui-state-hover a:hover,
+.erau-ui-tabs.ui-state-hover a,.erau-ui-tabs.ui-state-hover a:hover{color:#313131;text-decoration:none}
+.erau-accordion.ui-state-active,.erau-ui-tabs.ui-widget-header .ui-state-active,
+.erau-accordion.ui-state-active,.erau-ui-tabs.ui-widget-header .ui-state-active{border:1px solid #1e7bc8;color:#fff;background:#05a6eb;background-image:linear-gradient(to bottom, #0abeff, #0a95ff)}
+.erau-accordion.ui-state-active a,.erau-accordion.ui-state-active a:link,.erau-accordion.ui-state-active a:visited,
+.erau-ui-tabs.ui-state-active a,.erau-ui-tabs.ui-state-active a:link,.erau-ui-tabs.ui-state-active a:visited{color:#fff;text-decoration:none}
+.erau-accordion.ui-widget :active,
+.erau-ui-tabs.ui-widget :active{outline:none}
+.erau-accordion.ui-state-error,.erau-accordion.ui-widget-content .ui-state-error,.erau-accordion.ui-widget-header .ui-state-error,
+.erau-ui-tabs.ui-state-error,.erau-ui-tabs.ui-widget-content .ui-state-error,.erau-ui-tabs.ui-widget-header .ui-state-error{border:1px solid #c43c35;background:#c43c35;color:#fff;background-image:linear-gradient(to bottom, #ee5f5b, #c43c35);text-shadow:0 -1px 0 rgba(0,0,0,0.25);border-color:#c43c35 #c43c35 #882a25;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);box-shadow:inset 0 1px 0 rgba(255,255,255,0.25)}
+
+.erau-accordion.ui-state-error a,.erau-accordion.ui-widget-content .ui-state-error a,.erau-accordion.ui-widget-header .ui-state-error a,
+.erau-ui-tabs.ui-state-error a,.erau-ui-tabs.ui-widget-content .ui-state-error a,.erau-ui-tabs.ui-widget-header .ui-state-error a{color:#fff}
+
+.erau-accordion.ui-state-error-text,.erau-accordion.ui-widget-content .ui-state-error-text,.erau-accordion.ui-widget-header .ui-state-error-text,
+.erau-ui-tabs.ui-state-error-text,.erau-ui-tabs.ui-widget-content .ui-state-error-text,.erau-ui-tabs.ui-widget-header .ui-state-error-text{color:#fff}
+
+.erau-accordion.ui-priority-primary,.erau-accordion.ui-widget-content .ui-priority-primary,.erau-accordion.ui-widget-header .ui-priority-primary,
+.erau-ui-tabs.ui-priority-primary,.erau-ui-tabs.ui-widget-content .ui-priority-primary,.erau-ui-tabs.ui-widget-header .ui-priority-primary{font-weight:bold}
+
+.erau-accordion.ui-priority-secondary,.erau-accordion.ui-widget-content .ui-priority-secondary,.erau-accordion.ui-widget-header .ui-priority-secondary,
+.erau-ui-tabs.ui-priority-secondary,.erau-ui-tabs.ui-widget-content .ui-priority-secondary,.erau-ui-tabs.ui-widget-header .ui-priority-secondary{opacity:0.7;font-weight:normal}
+
+.erau-accordion.ui-state-disabled,.erau-accordion.ui-widget-content .ui-state-disabled,.erau-accordion.ui-widget-header .ui-state-disabled,
+.erau-ui-tabs.ui-state-disabled,.erau-ui-tabs.ui-widget-content .ui-state-disabled,.erau-ui-tabs.ui-widget-header .ui-state-disabled{opacity:.6;background-image:none}
+
+.erau-accordion.ui-state-success,.erau-accordion.ui-state-warning,
+.erau-ui-tabs.ui-state-success,.erau-ui-tabs.ui-state-warning{border-width:1px;border-style:solid;border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);box-shadow:inset 0 1px 0 rgba(255,255,255,0.25);color:#EE0612}
+
+.erau-accordions.ui-state-success,
+.erau-ui-tabs.ui-state-success{background-image:linear-gradient(to bottom, #62c462, #3ea63e)}
+
+.erau-accordions.ui-state-warning,
+.erau-accordions.ui-state-warning{background-image:linear-gradient(to bottom, #fbb450, #f89406)}
+
+/* Child of ERAU UI */
+.erau-accordion .ui-corner-all,.erau-accordion .ui-corner-top,.erau-accordion .ui-corner-left,.erau-accordion .ui-corner-tl,
+.erau-ui-tabs .ui-corner-all,.erau-ui-tabs .ui-corner-top,.erau-ui-tabs .ui-corner-left,.erau-ui-tabs .ui-corner-tl{border-top-left-radius:3px}
+
+.erau-accordion .ui-corner-all,.erau-accordion .ui-corner-top,.erau-accordion .ui-corner-right,.erau-accordion .ui-corner-tr,
+.erau-ui-tabs .ui-corner-all,.erau-ui-tabs .ui-corner-top,.erau-ui-tabs .ui-corner-right,.erau-ui-tabs .ui-corner-tr{border-top-right-radius:3px}
+
+.erau-accordion .ui-corner-all,.erau-accordion .ui-corner-bottom,.erau-accordion .ui-corner-left,.erau-accordion .ui-corner-bl,
+.erau-ui-tabs .ui-corner-all,.erau-ui-tabs .ui-corner-bottom,.erau-ui-tabs .ui-corner-left,.erau-ui-tabs .ui-corner-bl{border-bottom-left-radius:3px}
+
+.erau-accordion .ui-corner-all,.erau-accordion .ui-corner-bottom,.erau-accordion .ui-corner-right,.erau-accordion .ui-corner-br,
+.erau-ui-tabs .ui-corner-all,.erau-ui-tabs .ui-corner-bottom,.erau-ui-tabs .ui-corner-right,.erau-ui-tabs .ui-corner-br{border-bottom-right-radius:3px}
+
+.erau-accordion.ui-widget-overlay,
+.erau-ui-tabs.ui-widget-overlay{background:rgba(45,59,69,0.75)}
+
+.erau-accordion.ui-widget,
+.erau-ui-tabs.ui-widget{font-size:14px;font-size:.875rem}
+
+
+.erau-accordion.ui-accordion .ui-accordion-content{/*padding:0;*/margin-top:0;margin-bottom:0;top:0;border-color:#C7CDD1}
+
+.erau-accordion.ui-accordion .ui-accordion-content.ui-accordion-content-active{border-bottom-left-radius:6px;border-bottom-right-radius:6px}
+
+.erau-accordion.ui-accordion .ui-accordion-header{transition:background 0.2s, border 0.2s, border-radius 0.2s;padding:12px 24px;margin-top:12px;border-radius:6px}
+
+.erau-accordion.ui-accordion .ui-accordion-header.ui-state-default{background:#f2f2f2;box-shadow:none;border-color:#C7CDD1;border-bottom:1px solid #C7CDD1}
+
+.erau-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-focus a{box-shadow:inset 0 0 0 1px #5295ce}
+
+.erau-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-hover{background:#e6e6e6}
+
+.erau-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active{border-bottom-left-radius:0;border-bottom-right-radius:0;border-color:#357ebd;border-bottom:1px solid #357ebd;background:#428bca}
+
+.erau-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-focus{border-color:#3071a9;border-bottom:1px solid #3071a9}
+
+.erau-accordion.ui-accordion .ui-accordion-header.ui-state-default.ui-state-active.ui-state-focus a{box-shadow:inset 0 0 0 1px #fff}
+
+.erau-accordion.ui-accordion .ui-accordion-header a{transition:color 0.2s;padding:6px 12px;font-weight:normal;font-size:16px;font-size:1rem;text-shadow:none;line-height:1;outline:none}
+
+.erau-accordion.ui-accordion .ui-accordion-header .ui-icon{left:10px}
+
+.erau-accordion.ui-accordion.ui-accordion--mini .ui-accordion-header{margin-top:4px;padding:0;border-radius:3px}
+
+.erau-accordion.ui-accordion.ui-accordion--mini .ui-accordion-header a{font-size:13px;font-size:.8125rem;padding:6px 12px 6px 24px}
+
+.erau-accordion.ui-accordion.ui-accordion--mini .ui-accordion-header .ui-icon{left:4px}
+
+.erau-accordion.ui-accordion.ui-accordion--mini .ui-accordion-content.ui-accordion-content-active{border-bottom-left-radius:3px;border-bottom-right-radius:3px}
+
+
+.erau-ui-tabs.ui-tabs .ui-tabs-panel{border-color:#C7CDD1;padding:14px}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav{border-bottom-color:#C7CDD1}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li{background:transparent;border-color:transparent;box-shadow:none}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li a{outline-width:1px;outline-color:transparent;outline-style:solid;color:#428bca;font-weight:normal;padding:8px 14px;text-shadow:none}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li a:focus{text-decoration:underline;outline:none}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-hover,.erau-ui-tabs.ui-tabs .ui-tabs-nav li:hover{background:#fff;border-color:#C7CDD1}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-hover a,.erau-ui-tabs.ui-tabs .ui-tabs-nav li:hover a{color:#2D3B45}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-focus,.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-focus.ui-tabs-active{outline:none;border-color:#C7CDD1;background:#fff}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-focus a,.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-state-focus.ui-tabs-active a{text-decoration:underline;outline:none}
+
+.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-active,.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-active.ui-state-hover,.erau-ui-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-active:hover{border-color:#C7CDD1;background:#fff}
+
+.erau-ui-tabs.ui-tabs.ui-tabs--mini .ui-tabs-nav li a{padding:4px 8px}
+
+.erau-ui-tabs.ui-tabs.ui-tabs-minimal .ui-tabs-panel{border-width:0;padding-left:0;padding-right:0;padding-bottom:0}

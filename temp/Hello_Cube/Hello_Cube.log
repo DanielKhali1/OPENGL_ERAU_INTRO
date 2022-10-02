@@ -1,0 +1,5 @@
+﻿  glad_gl.c
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1391,5): warning MSB8012: TargetPath(C:\Users\danny\OneDrive\Documents\glfw-3.3.8\build\examples\Debug\.exe) does not match the Linker's OutputFile property value (C:\Users\danny\OneDrive\Documents\glfw-3.3.8\build\examples\Debug\Hello_Cube.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+Source.obj : error LNK2019: unresolved external symbol reshape referenced in function main
+Source.obj : error LNK2019: unresolved external symbol init referenced in function main
+C:\Users\danny\OneDrive\Documents\glfw-3.3.8\build\examples\Debug\Hello_Cube.exe : fatal error LNK1120: 2 unresolved externals

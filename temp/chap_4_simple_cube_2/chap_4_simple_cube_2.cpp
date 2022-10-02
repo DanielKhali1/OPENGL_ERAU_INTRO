@@ -126,8 +126,6 @@ int main(void) {
 
 	glm::mat4 model = glm::mat4(1.0f);
 	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -6.0f) * MatrixHelper::buildRotateX(-20.0f) * MatrixHelper::buildRotateY(20.0f);
-
-
 	glm::mat4 perspective = glm::perspective(glm::radians(45.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 100.0f);
 	
 	while (!glfwWindowShouldClose(window)) {

@@ -1,0 +1,14 @@
+﻿  Source.c
+Source.c(146,86): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(146,74): warning C4024: 'glmc_perspective': different types for formal and actual parameter 5
+Source.c(147,26): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(147,21): warning C4024: 'glm_translate_z': different types for formal and actual parameter 1
+Source.c(148,21): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(148,16): warning C4024: 'glm_rotate': different types for formal and actual parameter 1
+Source.c(149,21): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(149,16): warning C4024: 'glm_rotate': different types for formal and actual parameter 1
+Source.c(55,1): warning C4047: 'initializing': 'GLuint' differs in levels of indirection from 'void *'
+Source.c(125,1): warning C4047: 'initializing': 'GLuint' differs in levels of indirection from 'void *'
+Source.c(187,22): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(187,16): warning C4024: 'glm_rotate': different types for formal and actual parameter 1
+  Hello_Cube.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\Hello_Cube.exe

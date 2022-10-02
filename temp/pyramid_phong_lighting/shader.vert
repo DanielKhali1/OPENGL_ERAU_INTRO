@@ -10,7 +10,6 @@ uniform mat4 model;
 out vec2 ftc;
 out vec4 color;
 out vec3 norm;
-out vec3 norm2;
 out vec3 fragPos;
 
 void main()
@@ -19,7 +18,6 @@ void main()
    ftc = aTc;
 
    fragPos = vec3(model * vec4(aPos, 1.0));
-   norm2 = aNorm;
-   norm = vec3(transpose(inverse(model))) * aNorm;
+   norm = mat3(transpose(inverse(model))) * aNorm;
 
 }

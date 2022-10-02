@@ -67,14 +67,13 @@ void calculateSurfaceNormals(std::vector<GLfloat>* normals, std::vector <GLfloat
 		std::cout << "v: " << v.x << " " << v.y << "  " << v.z << std::endl;
 
 
-		for (int i = 0; i < 3; i++) {
 
 		glm::vec3 normal = glm::normalize(glm::cross(v, u));
 		normals->push_back(normal.x);
 		normals->push_back(normal.y);
 		normals->push_back(normal.z);
 		std::cout << normal.x << " " << normal.y << "  " << normal.z << std::endl;
-		}
+
 
 	}
 }
@@ -125,7 +124,7 @@ int main(void) {
 	mesh light = mesh::mesh("light.vert", "light.frag");
 	light.makeSphere(48);
 
-	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -7) * MatrixHelper::buildRotateX(-20.0f) * MatrixHelper::buildRotateY(-10.0f);
+	glm::mat4 view = MatrixHelper::buildTranslate(0.0f, 0.0f, -7);// *MatrixHelper::buildRotateX(-20.0f)* MatrixHelper::buildRotateY(-10.0f);
 	glm::mat4 perspective = glm::perspective(glm::radians(60.0f), (float)WIDTH/(float)HEIGHT, 0.1f, 20.0f);
 
 	pyramid.setUniform1i(1, "decide");
@@ -144,8 +143,8 @@ int main(void) {
 		move_events();
 
 		pyramid.setUniform1i(2, "decide");
-		//pyramid.model *= MatrixHelper::buildRotateY(1.0f);
-		view *= MatrixHelper::buildTranslate(-0.001, 0.0, 0.0) * MatrixHelper::buildRotateY(0.5f);
+		pyramid.model *= MatrixHelper::buildRotateY(1.0f);
+		//view *= MatrixHelper::buildTranslate(-0.001, 0.0, 0.0) * MatrixHelper::buildRotateY(0.5f);
 		glm::mat4 mvp = perspective * view * pyramid.model ;
 		glUniform3f(glGetUniformLocation(pyramid.shaderProgram, "lightColor"), 1.0f, 1.0f, 1.0f);
 		glUniform3fv(glGetUniformLocation(pyramid.shaderProgram, "lightPos"), 1, &lightPos[0]);

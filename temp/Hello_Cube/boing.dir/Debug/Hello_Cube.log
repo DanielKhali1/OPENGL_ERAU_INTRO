@@ -1,0 +1,3 @@
+﻿Source.obj : error LNK2019: unresolved external symbol reshape referenced in function main
+Source.obj : error LNK2019: unresolved external symbol init referenced in function main
+C:\Users\danny\OneDrive\Documents\glfw-3.3.8\build\examples\Debug\boing.exe : fatal error LNK1120: 2 unresolved externals
