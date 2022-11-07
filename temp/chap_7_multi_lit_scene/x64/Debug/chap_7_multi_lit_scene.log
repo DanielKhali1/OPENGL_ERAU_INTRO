@@ -1,0 +1,90 @@
+﻿  Camera.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\Camera.cpp(25,9): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\Camera.cpp(26,11): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(178,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(178,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(198,2): error C3861: 'setupShadowBuffer': identifier not found
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(200,55): error C2661: 'mesh::mesh': no overloaded function takes 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(200,14): error C2512: 'mesh': no appropriate default constructor available
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(9,7): message : see declaration of 'mesh'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(203,47): error C2660: 'mesh::addShader': function does not take 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(35,7): message : see declaration of 'mesh::addShader'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(205,54): error C2661: 'mesh::mesh': no overloaded function takes 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(205,13): error C2512: 'mesh': no appropriate default constructor available
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(9,7): message : see declaration of 'mesh'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(208,46): error C2660: 'mesh::addShader': function does not take 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(35,7): message : see declaration of 'mesh::addShader'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(211,53): error C2661: 'mesh::mesh': no overloaded function takes 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(211,12): error C2512: 'mesh': no appropriate default constructor available
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(9,7): message : see declaration of 'mesh'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(214,45): error C2660: 'mesh::addShader': function does not take 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(35,7): message : see declaration of 'mesh::addShader'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(217,54): error C2661: 'mesh::mesh': no overloaded function takes 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(217,13): error C2512: 'mesh': no appropriate default constructor available
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(9,7): message : see declaration of 'mesh'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(220,46): error C2660: 'mesh::addShader': function does not take 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(35,7): message : see declaration of 'mesh::addShader'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(223,52): error C2661: 'mesh::mesh': no overloaded function takes 2 arguments
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\main.cpp(223,13): error C2512: 'mesh': no appropriate default constructor available
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.h(9,7): message : see declaration of 'mesh'
+  MatrixHelper.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  mesh.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.cpp(276,102): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\mesh.cpp(283,96): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  RenderingManager.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(20,24): error C2511: 'void RenderingManager::generateShadowBuffers(void)': overloaded member function not found in 'RenderingManager'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.h(6): message : see declaration of 'RenderingManager'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(25,22): error C2671: 'RenderingManager::generateShadowBuffers': static member functions do not have 'this' pointers
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(30,39): error C2597: illegal reference to non-static member 'RenderingManager::frameBuffers'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(30,39): error C3867: 'RenderingManager::frameBuffers': non-standard syntax; use '&' to create a pointer to member
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(30,39): error C2568: '[': unable to resolve function overload
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(30,40): error C2198: 'PFNGLGENFRAMEBUFFERSPROC': too few arguments for call
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(32,32): error C2597: illegal reference to non-static member 'RenderingManager::shadowTex'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(32,32): error C3867: 'RenderingManager::shadowTex': non-standard syntax; use '&' to create a pointer to member
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(32,32): error C2568: '[': unable to resolve function overload
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(32,33): error C2660: 'glGenTextures': function does not take 1 arguments
+C:\OpenGLTemplate\include\GL\glew.h(960,23): message : see declaration of 'glGenTextures'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(33,43): error C2597: illegal reference to non-static member 'RenderingManager::shadowTex'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(33,43): error C3867: 'RenderingManager::shadowTex': non-standard syntax; use '&' to create a pointer to member
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(33,43): error C2568: '[': unable to resolve function overload
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(33,44): error C2660: 'glBindTexture': function does not take 1 arguments
+C:\OpenGLTemplate\include\GL\glew.h(867,23): message : see declaration of 'glBindTexture'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(44,51): error C2597: illegal reference to non-static member 'RenderingManager::frameBuffers'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(44,51): error C3867: 'RenderingManager::frameBuffers': non-standard syntax; use '&' to create a pointer to member
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(44,51): error C2568: '[': unable to resolve function overload
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(44,52): error C2198: 'PFNGLBINDFRAMEBUFFERPROC': too few arguments for call
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(45,89): error C2597: illegal reference to non-static member 'RenderingManager::shadowTex'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(45,89): error C3867: 'RenderingManager::shadowTex': non-standard syntax; use '&' to create a pointer to member
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(45,89): error C2568: '[': unable to resolve function overload
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(45,93): error C2198: 'PFNGLFRAMEBUFFERTEXTURE2DPROC': too few arguments for call
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(71,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(77,26): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(77,19): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(84,2): error C2065: 'lightPos': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(84,41): error C2065: 'theta': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(85,2): error C2065: 'lightPos': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(85,41): error C2065: 'theta': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(86,2): error C2065: 'theta': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(89,36): error C2065: 'shadowBuffer': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(92,40): error C2664: 'void glBindTexture(GLenum,GLuint)': cannot convert argument 2 from 'std::vector<GLuint,std::allocator<GLuint>>' to 'GLuint'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(92,31): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\OpenGLTemplate\include\GL\glew.h(867,23): message : see declaration of 'glBindTexture'
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(97,11): error C2065: 'charm': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(97,19): error C2065: 'squirt': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(97,28): error C2065: 'bulb': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(97,35): error C2065: 'plane': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(97,43): error C2065: 'light': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(97,2): error C3861: 'passOne': identifier not found
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(102,26): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(102,19): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(104,11): error C2065: 'charm': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(104,19): error C2065: 'squirt': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(104,28): error C2065: 'bulb': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(104,35): error C2065: 'plane': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(104,43): error C2065: 'light': undeclared identifier
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\chap_7_multi_lit_scene\RenderingManager.cpp(104,2): error C3861: 'passTwo': identifier not found
+  Shader.cpp
+  Generating Code...

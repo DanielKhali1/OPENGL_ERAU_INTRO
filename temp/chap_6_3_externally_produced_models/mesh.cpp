@@ -104,6 +104,11 @@ void mesh::loadOBJ(const char* objFilePath) {
 				numTriangles += 1;
 			}
 		}
+
+		for (int i = 0; i < verticies.size(); i+=3) {
+			std::cout << verticies[i] << ", " << verticies[i + 1] << ", " << verticies[i + 2] << ",\n";
+		}
+
 		std::cout << "finished loading obj" << std::endl;
 		loadVertexPositions(&this->verticies, "aPos");
 		loadTextCoords(&this->textureCoords, "aTc");

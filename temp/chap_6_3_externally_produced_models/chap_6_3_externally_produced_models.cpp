@@ -42,16 +42,16 @@ int main(void) {
 	init(window);
 
 	mesh bulb = mesh::mesh("monkey.vert", "monkey.frag");
-	bulb.loadOBJ("bulb.obj");
-	bulb.loadTexture("Bulbasaur_BaseColor_1001.png", GL_TEXTURE0);
+	bulb.loadOBJ("pyramid.obj");
+	bulb.loadTexture("image.jpg", GL_TEXTURE0);
 
 	mesh charm = mesh::mesh("monkey.vert", "monkey.frag");
-	charm.loadOBJ("char.obj");
-	charm.loadTexture("Charmander_BaseColor_1001.png", GL_TEXTURE1);
+	charm.loadOBJ("pyramid.obj");
+	charm.loadTexture("image.jpg", GL_TEXTURE1);
 
 	mesh squirt = mesh::mesh("monkey.vert", "monkey.frag");
-	squirt.loadOBJ("squirt.obj");
-	squirt.loadTexture("Squirtle_BaseColor_1001.png", GL_TEXTURE2);
+	squirt.loadOBJ("pyramid.obj");
+	squirt.loadTexture("image.jpg", GL_TEXTURE2);
 
 	glGetError();
 

@@ -194,5 +194,4 @@ void mesh::setIndicies(std::vector<GLuint>* indicies) {
 void mesh::cleanup() {
 
 	glDeleteProgram(this->shaderProgram);
-
 }

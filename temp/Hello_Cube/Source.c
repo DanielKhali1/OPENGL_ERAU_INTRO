@@ -13,85 +13,16 @@
 #include <cglm/cglm.h>   /* for inline */
 #include <cglm/call.h>   /* for library call (this also includes cglm.h) */
 
+#include "shader_helper.h"
 mat4 perspective = GLM_MAT4_IDENTITY_INIT;
 mat4 view = GLM_MAT4_IDENTITY_INIT;
 mat4 model = GLM_MAT4_IDENTITY_INIT;
 mat4 mvp = GLM_MAT4_IDENTITY_INIT;
 int width = 800.0f, height = 600.0f;
 
-void checkStatus(unsigned int shaderIndex,bool isLinking)
-{
-
-    char infoLog[512];
-    int success = 1;
-    glGetProgramiv(shaderIndex, GL_COMPILE_STATUS, &success);
-
-    if (!success) {
-        glGetProgramInfoLog(shaderIndex, 512, NULL, infoLog);
-        printf("ERROR WITH SHADER\n");
-    }
-    else
-    {
-        printf("SUCCESS WITH SHADER\n");
-    }
-    if (isLinking) {
-        glGetProgramiv(shaderIndex, GL_LINK_STATUS, &success);
-        if (!success)
-        {
-            glGetProgramInfoLog(shaderIndex, 512, NULL, infoLog);
-            printf("ERROR WITH SHADER\n");
-        }
-        else
-        {
-            printf("SUCCESS WITH SHADER\n");
-        }
-    }
-    glGetError();
-
-}
-
 // setup VBO/VAO shit
 GLuint init () {
-    GLuint shaderProgram = NULL;
-    const GLchar* vertex_shader =
-        "#version 430 core\n"
-        "in vec4 color;\n"
-        "in vec3 aPos;\n"
-        "uniform mat4 mvp;\n"
-        "out vec4 fcolor;\n"
-        "void main()\n"
-        "{\n"
-        "    gl_Position = mvp * vec4(aPos, 1.0) ;\n"
-        "    fcolor = color;\n"
-        "}\n";
-
-    const GLchar * fragment_shader =
-        "#version 430 core\n"
-        "in vec4 fcolor;\n"
-        "out vec4 FragColor;\n"
-        "void main()\n"
-        "{\n"
-        "    FragColor = fcolor;\n"
-        "}\n";
-
-    GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertex_shader, (void * ) 0);
-    glCompileShader(vertexShader);
-    checkStatus(vertexShader, false);
-
-    GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &fragment_shader, NULL);
-    glCompileShader(fragmentShader);
-    checkStatus(fragmentShader, false);
-
-    shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram, vertexShader);
-    glAttachShader(shaderProgram, fragmentShader);
-    glLinkProgram(shaderProgram);
-    checkStatus(fragmentShader, true);
-    glDeleteProgram(vertexShader);
-    glDeleteProgram(fragmentShader);
-
+    GLuint shaderProgram = createShader("chap_4_simple_cube_2.vert", "chap_4_simple_cube_2.frag");
 
     GLfloat vertices[] = {
         // front
@@ -192,13 +123,7 @@ void display(GLuint shaderProgram) {
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, indices);
 }
 
-
-/*======================================================================*
- * main()
- *======================================================================*/
-
-int main(void)
-{
+void window_execution() {
     GLFWwindow* window;
 
     if (!glfwInit())
@@ -228,7 +153,7 @@ int main(void)
     float dt = glfwGetTime();
     /* Main loop */
 
-    while(true)
+    while (true)
     {
         glUseProgram(shaderProgram);
 
@@ -252,4 +177,10 @@ int main(void)
 
     glfwTerminate();
     exit(EXIT_SUCCESS);
+}
+
+int main(void)
+{
+    window_execution();
+    return 0;
 }

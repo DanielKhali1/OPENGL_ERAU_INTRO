@@ -57,7 +57,6 @@ int main(void) {
 		0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f
 		// back colors
 	};
-	
 
 	glEnable(GL_DEPTH_TEST);
 

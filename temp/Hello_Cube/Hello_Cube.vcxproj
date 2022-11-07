@@ -87,7 +87,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\danny\OneDrive\Documents\glfw-3.3.8\deps;C:\Users\danny\OneDrive\Documents\glfw-3.3.8\include;C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\C_proj_demo\cglm-master\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\danny\OneDrive\Documents\glfw-3.3.8\deps;C:\Users\danny\OneDrive\Documents\glfw-3.3.8\include;C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\include\cglm-master\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -122,7 +122,7 @@
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>C:/Users/danny/OneDrive/Documents/glfw-3.3.8/build/examples/Debug/boing.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/danny/OneDrive/Documents/glfw-3.3.8/build/examples/Debug/boing.pdb</ProgramDataBaseFile>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -314,7 +314,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="shader_helper.c" />
     <ClCompile Include="Source.c" />
+    <ClInclude Include="shader_helper.h" />
     <ResourceCompile Include="C:\Users\danny\OneDrive\Documents\glfw-3.3.8\examples\glfw.rc" />
     <ClInclude Include="C:\Users\danny\OneDrive\Documents\glfw-3.3.8\deps\glad\gl.h" />
     <ClCompile Include="C:\Users\danny\OneDrive\Documents\glfw-3.3.8\deps\glad_gl.c" />
@@ -337,6 +339,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <None Include="cglm.dll" />
+    <None Include="chap_4_simple_cube_2.frag" />
+    <None Include="chap_4_simple_cube_2.vert" />
     <None Include="glfw3.pdb" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

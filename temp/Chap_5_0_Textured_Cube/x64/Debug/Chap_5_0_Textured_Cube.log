@@ -1,7 +1,10 @@
 ﻿  chap_5_0_textured_cube.cpp
 C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Chap_5_0_Textured_Cube\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  MatrixHelper.cpp
+C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Chap_5_0_Textured_Cube\MatrixHelper.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   mesh.cpp
 C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Chap_5_0_Textured_Cube\mesh.cpp(180,102): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\Chap_5_0_Textured_Cube\mesh.cpp(187,96): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  Shader.cpp
   Generating Code...
   Chap_5_0_Textured_Cube.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\Chap_5_0_Textured_Cube.exe

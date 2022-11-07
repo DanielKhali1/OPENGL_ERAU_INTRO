@@ -1,0 +1,7 @@
+﻿  Source.c
+Source.c(121,101): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(121,89): warning C4024: 'glmc_perspective': different types for formal and actual parameter 5
+Source.c(100,1): warning C4047: 'initializing': 'GLuint' differs in levels of indirection from 'void *'
+Source.c(136,102): warning C4047: 'function': 'vec4 (*)' differs in levels of indirection from 'mat4 (*)'
+Source.c(136,90): warning C4024: 'glmc_perspective': different types for formal and actual parameter 5
+  c_opengl_template_version_21.vcxproj -> C:\Users\danny\OneDrive\Documents\GitHub\OPENGL_ERAU_INTRO\temp\x64\Debug\c_opengl_template_version_21.exe
